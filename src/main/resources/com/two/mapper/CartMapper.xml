@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.two.dao.CartMapper" >
+  <resultMap id="BaseResultMap" type="com.two.pojo.Cart" >
+    <id column="id" property="id"/>
+    <result column="user_id" property="userId"/>
+    <result column="product_id" property="productId"/>
+    <result column="quantity" property="quantity"/>
+    <result column="checked" property="checked"  />
+    <result column="create_time" property="createTime" />
+    <result column="update_time" property="updateTime"  />
+  </resultMap>
+  <select id="selectCartByUserIdAndProductId" parameterType="map" resultMap ="BaseResultMap">
+    select id,user_id,product_id,quantity,checked,create_time,update_time from cart
+    <where>
+      <if test="userId != null and userId !='' ">
+        and user_id = #{userId}
+      </if>
+      <if test="productId != null and productId !='' ">
+        and product_id = #{productId}
+      </if>
+    </where>
+  </select>
+
+  <select id="selectCartCondition" parameterType="com.two.pojo.Cart" resultMap ="BaseResultMap">
+    select * from cart
+    <where>
+      <if test="userId != null and userId !='' ">
+        and user_id = #{userId}
+      </if>
+      <if test="productId != null and productId !='' ">
+        and product_id = #{productId}
+      </if>
+      <if test="checked != null and checked !='' ">
+        and checked = #{checked}
+      </if>
+    </where>
+  </select>
+
+  <insert id="addProductToCart" parameterType="com.two.pojo.Cart" >
+    insert into cart (user_id,product_id,quantity,checked,create_time,update_time)
+    values (#{userId},#{productId},#{quantity},#{checked},now(),now())
+  </insert>
+
+  <update id="updateProductToCart" parameterType="map" >
+    update cart set quantity=#{quantity},update_time=now()
+    where user_id=#{userId}
+    and product_id=#{productId}
+
+  </update>
+
+  <update id="chooseAll" parameterType="com.two.pojo.Cart" >
+    update cart set checked=#{status},update_time=now()
+    where user_id=#{userId}
+
+  </update>
+  <update id="chooseOne" parameterType="com.two.pojo.Cart" >
+    update cart set checked=#{status},update_time=now()
+    where user_id=#{userId}
+    and product_id=#{productId}
+
+  </update>
+
+  <select id="selectCartByUserId" parameterType="int" resultMap ="BaseResultMap">
+    select * from cart
+    <where>
+      <if test="userId != null and userId !='' ">
+        and user_id = #{userId}
+      </if>
+
+    </where>
+  </select>
+  <delete id="delete" parameterType="map">
+    delete from cart
+    <where>
+      user_id = #{userId}
+      <if test="productId != null and productId.size()>0">
+        and product_id in
+      <foreach collection="productId" separator="," open="(" close=")" item="productId">
+          #{productId}
+      </foreach>
+      </if>
+    </where>
+  </delete>
+
+  <update id="selectOrUnselectProduct" parameterType="map" >
+    update cart set checked=#{checked},update_time=now()
+    where user_id=#{userId}
+    <if test="productId != null">
+      and product_id=#{productId}
+    </if>
+
+  </update>
+  <select id="get_cart_product_count" parameterType="int" resultType="int">
+    select ifnull(sum(quantity),0) from  cart where user_id=#{userId}
+  </select>
+
+  <select id="findCartListByUserIdAndChecked" parameterType="map" resultMap="BaseResultMap">
+    select *
+    from  cart
+    where user_id=#{userId}
+    and checked=#{checked}
+  </select>
+
+  <delete id="batchDelete" parameterType="list">
+    delete from cart
+    <where>
+      id in
+        <foreach collection="list" separator="," open="(" close=")" item="cart">
+          #{cart.id}
+        </foreach>
+    </where>
+  </delete>
+</mapper>

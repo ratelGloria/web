@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>$Title$</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <link rel = "stylesheet"  href = "../static/css/query_top.css"/>
+    <link rel = "stylesheet"  href = "../static/css/query_main.css"/>
+    <link  rel="stylesheet" href="../static/css/query.css">
+    <script type = "text/javascript" src = "../static/js/jquery-3.2.1.min.js"></script>
+    <script type = "text/javascript" src="../static/js/query.js"></script>
+    <script type="text/javascript" src="../static/js/logIn.js"></script>
+</head>
+<body>
+<input type="hidden" th:value="${servletResponse}" id="servletResponse">
+<div class = "top" ></div>
+<div class = "main">
+    <div class = "main_content al_ju_cc">
+        <div class = "log_in al_ju_cc">
+
+            <table cellspacing="0" cellpadding="0">
+                <form action="/logInServlet" method="post" class="form-inline">
+                    <tr>
+                        <td colspan="2" id ="msgBlock"><span id = "msg" ></span></td>
+                    </tr>
+                    <tr>
+                        <td> <label for="userName">用户名：</label></td>
+                        <td><input type="text" class="form-control"  name ="userName" id = "userName" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <td> <label for="passWord">密码：</label></td>
+                        <td><input  class="form-control"  type = "password" name = "password" id = "password" placeholder=""></td>
+                    </tr>
+
+                    <tr id = "subs" >
+                        <td colspan = "2" style="width:236px;"><div class="al_ju_cc">
+                            <input type = "submit" id = "ok" class="btn btn-default" value = "登  陆">
+                        </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td id =""><a href="/forgetPwd"><span>忘记密码</span></a></td>
+                    </tr>
+
+                    <tr>
+                        <td> </td>
+                        <td id ="tologUp"><a href="logUp.jsp"><span>注&nbsp;册</span></a></td>
+                    </tr>
+                </form>
+
+             <!--   <tr id = "hint_1">
+                    <td colspan = "2"  id = "hint_f">
+                        <span class= "hint_word">用户名和密码错误！</span>
+                    </td>
+                </tr>-->
+
+              <!--  <tr id = "hint_1">
+                    <td colspan = "2"  id = "hint">
+                        <span class = "hint_word">用户名和密码错误！</span>
+                    </td>
+                </tr>-->
+
+            </table>
+
+        </div>
+
+    </div>
+</div>
+<div class = "bottom"></div>
+</body>
+</html>

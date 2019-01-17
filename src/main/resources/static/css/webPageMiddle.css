@@ -1,0 +1,162 @@
+
+*{
+ padding: 0px;
+    margin: 0px;
+}
+body{
+overflow-x: hidden;
+}
+iframe{
+    width:1322px;
+    height:610px;
+}
+.img_size{
+    width:50px;
+    height: 50px;
+}
+.top{
+    height: 100px;
+    background-color: #080027;
+    width: 100%;
+}
+.left{
+    width: 200px;
+    height: 100%;
+    background-color: #f2f2f2;
+    display: inline-block;
+}
+.right{
+    width:1290px;
+    height: 100%;
+    display: inline-block;
+}
+.bottom{
+    width: 100%;
+    height: 612px;
+    display: flex;
+}
+.inner_ul li a{
+    width: 200px;
+    height: 54px;
+    display: block;
+    text-align: center;
+    line-height: 54px;
+    margin-top:3px;
+}
+.out_li a{
+    text-align: center;
+    line-height: 70px;
+    width: 200px;
+    height: 70px;
+    display: block;
+    margin-top:3px;
+}
+#resultContent tr td{
+    width: 50px;
+    height: 44px;
+}
+#resultContent1 tr td{
+    width: 140px;
+    height: 44px;
+}
+.terms input{
+    width: 150px;
+}
+.terms{
+    height: 80px;
+    width: auto;
+}
+/*.terms tr td{
+    width: 230px;
+}*/
+#likeQueryShop{
+    width: 80px;
+}
+.addTable tr td:nth-child(1){
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.addTable tr td:nth-child(2){
+    width: 150px;
+    height: 50px;
+
+    line-height: 50px;
+}
+.addTable{
+    width: 600px;
+    margin: auto;
+    margin-top: 80px;
+    margin-left: 250px;
+}
+#addBut{
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    line-height: 28px;
+}
+#categoryBox{
+    display: flex;
+}
+#shop_img{
+    display: inline-block;
+}
+.terms tr td:nth-child(Odd){
+    width: 82px;
+}
+.terms tr td:nth-child(even){
+    width: 160px;
+}
+.terms tr td:nth-child(8){
+    width: 130px;
+}
+#addForm{
+    margin-left: 10px;
+}
+#resultContent_c{
+    width: 666px;
+}
+#resultContent_c tr td{
+    width: 220px;
+}
+.addC{
+    width: 600px;
+    height: 160px;
+    margin-top: 80px;
+    margin-left: 200px;
+}
+.addT_C{
+    height: 150px;
+    width: 600px;
+}
+#nomargin{
+    margin:0px;
+}
+.hh{
+    width: 144px;
+    display: inline-block;
+    height: 40px;
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-top: 22px;
+}
+.tc{
+    height: 100px;
+    width: 100px;
+}
+.hh1{
+    width: 227px;
+    display: inline-block;
+    height: 40px;
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-top: 22px;
+}
+.ShoppingCart{
+
+}
+#allPage{
+    width: 50px;
+    height: 50px;
+}

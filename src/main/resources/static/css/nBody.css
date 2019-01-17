@@ -1,0 +1,38 @@
+.box{
+    width: 200px;
+    height:200px;
+    border: 1px black;
+}
+.hh{
+    width: 144px;
+    display: inline-block;
+    height: 40px;
+    /* display: flex; */
+    /* justify-content: center; */
+    margin-top: 22px;
+}
+.numChoose{
+    width:100px;
+    height: 100px;
+    background: #c1e2b3;
+}
+.shopCar{
+    width: 100px;
+    heigth:200px;
+    background-color: #a6e1ec;
+}
+#numShow{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+}
+.numChoose{
+    display: inline-block;
+    border: 1px solid;
+    height: 28px;
+    width: 20px;
+    text-align: center;
+    line-height: 28px;
+    cursor: pointer;
+}

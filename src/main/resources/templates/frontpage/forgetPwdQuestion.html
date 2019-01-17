@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type = "text/javascript" src = "../static/js/jquery-3.2.1.min.js"></script>
+    <script type = "text/javascript" src="../static/js/forgetPwdQuestion.js"></script>
+</head>
+<body>
+<form action="matchAnswer">
+<input type="hidden" th:value="${userInfo1.getQuestion()}" id="userInfo1">
+    <input type="hidden" th:value="${userInfo1.getUsername()}" id="userName"  name="userName">
+<span id="questionAnswer"></span>
+
+<input type="text" id="answer" name="answer">
+<input type="submit" value="找回密码">
+</form>
+</body>
+</html>
